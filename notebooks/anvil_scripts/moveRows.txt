@@ -1,0 +1,17 @@
+import anvil.google.auth, anvil.google.drive, anvil.google.mail
+from anvil.google.drive import app_files
+import anvil.users
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+import anvil.server
+
+# method: remove tweet from count table when it gets 5 evaluations.
+@anvil.server.callable
+def move_rows():
+  for row in app_tables.count.search(count = q.greater_than_or_equal_to(5)):
+    print(row['str_id'])
+    app_tables.count_finished.add_row(str_id=row['str_id'])
+    row.delete()
+    
+    

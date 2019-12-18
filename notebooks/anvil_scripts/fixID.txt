@@ -1,0 +1,19 @@
+import anvil.google.auth, anvil.google.drive, anvil.google.mail
+from anvil.google.drive import app_files
+import anvil.users
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+import anvil.server
+
+users = ["vcbbio@hotmail.com", "sandrabiafe@gmail.com", "marcelo.gomes@fiocruz.br", "lucas_bianchi123@hotmail.com", "bmacedocoimbra@gmail.com", "marcelobbribeiro@gmail.com", "iasmimalmeida26@gmail.com", "felipebottega@gmail.com", "alfcury@yahoo.com", "biancadsloiola@gmail.com", "karinasantana.bqi@gmail.com", "catoper@gmail.com", "sheylacitrangulo@gmail.com", "nadja.lopes@gmail.com", "fccoelho@gmail.com", "emiledanielly@gmail.com", "claudia.codeco@gmail.com", "raquelmlana@gmail.com", "alfcury@yahoo.com.br"]
+@anvil.server.callable
+#fix id of count or classifications
+def fix_tweets(str_id, tid, count):
+  print("Feeding Database", count, tid, str_id)
+  for user in users:
+    try: 
+      row = app_tables.classifications.get(tid = tid, uid=user)
+      if row is not None and row['str_id'] == None: 
+        row['str_id'] = str_id
+    except: pass

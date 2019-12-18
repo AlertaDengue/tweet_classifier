@@ -1,0 +1,35 @@
+import anvil.google.auth, anvil.google.drive, anvil.google.mail
+from anvil.google.drive import app_files
+import anvil.users
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+import anvil.server
+from datetime import datetime
+
+def str_to_date(date):
+    date = date[-4:]+date[3:-11]
+    date = datetime.strptime(date, "%Y %b %d %H:%M:%S")
+    return date
+  
+@anvil.server.callable
+# def feed_tweets(tid, text, count):
+#   print("Feeding Database", count)
+#   app_tables.tweets.add_row(tid = tid, text = text, count = count)
+
+#expand count
+def expand_count(tid, str_id, count):
+  print("Feeding Database", str_id, count)
+  app_tables.count.add_row(tid = tid, count = 0, str_id=str_id)
+  
+###OLD###
+# def feed_tweets(str_id):
+#   print("Feeding Database", str_id)
+#   app_tables.count_finished.add_row(str_id = str_id)
+
+#fix id of tweets (get 18 bits of id)
+# def feed_tweets(tid, text, count):
+#   print("Feeding Database", count)
+#   row = app_tables.tweets.get(count = count)
+#   row['str_id'] = str(_id)
+

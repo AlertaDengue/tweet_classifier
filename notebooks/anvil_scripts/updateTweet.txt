@@ -1,0 +1,17 @@
+import anvil.google.auth, anvil.google.drive, anvil.google.mail
+from anvil.google.drive import app_files
+import anvil.users
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+import anvil.server
+from datetime import datetime
+
+@anvil.server.callable
+def update_tweet(tid, relevance, user, str_id):
+  app_tables.classifications.add_row(tid=tid, uid=user, date_classified=datetime.now(), relevance=relevance, str_id=str_id)
+  row = app_tables.count.get(str_id=str_id)
+  row['count']+=1
+  
+  print("Database was updated!")
+  

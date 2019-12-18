@@ -1,0 +1,25 @@
+import anvil.google.auth, anvil.google.drive, anvil.google.mail
+from anvil.google.drive import app_files
+import anvil.users
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+import anvil.server
+
+@anvil.server.callable
+
+# def remove_error():
+#   for id_error in ['850333230171660288','847146911886921729','984241594919505922','841418935815811072','705772847604604929','857301323708059654','854118951495897088','851551740121972738']:
+#     row = app_tables.count_finished.get(str_id=id_error)
+#     print(row['str_id'])
+#     row.delete()
+
+def remove_error():
+  for id_error in ["[32978,20637696]", "[32978,21302026]", "[32978,21485624]", "[32978,21486508]"]:
+    row = app_tables.classifications.get_by_id(id_error)
+    print(id_error,row['str_id'])
+    str_id = row['str_id']
+    row.delete()
+    row = app_tables.count.get(str_id=str_id)
+    row['count']-=1
+  
