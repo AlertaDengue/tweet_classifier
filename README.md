@@ -18,3 +18,13 @@ Database notebooks:
 * mongo_ufmg_filtered (folder): MongoDB collection containing only relevant variables from previous file.
 * amostra.tgz: UFMG database (from 2010-2018, doesn't contain extended_text)
 * tweets_anvil_input.json': input for anvil app.
+
+## About Train Set
+Train set was built by collecting tweets from 2016-2018. The samples for data annotation were collected from a MongoDB collection (built from a JSON provided by UFMG) from weeks of virus peaks between 2016 and 2018, as there would be more relevant tweets during peaks (which would help with unbalanced data). 
+* Total sample size: 5.000.
+* Subsample size which was used for data annotation: 1.000.
+* Data was annotated following instructions decided internally. See link: [Classifications instructions](https://github.com/AlertaDengue/tweet_classifier/blob/master/classification_instructions.md)
+* The annotation process was organized with the creation of an app, with the objective of being faster and more interesting to participants to complete the task. The app was built using [Anvil](https://anvil.works/) and the scripts are located on 'notebooks/anvil_scripts' folder.
+
+Participants in the data annotation: sandrabiafe@gmail.com, marcelo.gomes@fiocruz.br, lucas_bianchi123@hotmail.com, vcbbio@hotmail.com, bmacedocoimbra@gmail.com, iasmimalmeida26@gmail.com, felipebottega@gmail.com, alfcury@yahoo.com.br, biancadsloiola@gmail.com, catoper@gmail.com, sheylacitrangulo@gmail.com, nadja.lopes@gmail.com, emiledanielly@gmail.com, marcelobbribeiro@gmail.com, karinasantana.bqi@gmail.com, fccoelho@gmail.com, raquelmlana@gmail.com, claudia.codeco@gmail.com
+
