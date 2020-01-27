@@ -18,7 +18,7 @@ Database notebooks:
 ## Databases
 ### Iputs Out of github (files were too big)
 * dengue.json.bz2: main database from UFMG, with all variables. This database has a parsing error and had to be fixed.
-[comment]: <> (* dengue_fixed.json.bz2: fixed from previous database. Warning: special characters had to be removed in order for the fix to work properly.)
+<!--- * dengue_fixed.json.bz2: fixed from previous database. Warning: special characters had to be removed in order for the fix to work properly. --->
 * mongo_ufmg_filtered (folder) 
 	* mongo_ufmg_filtered/twitter/ufmg_filtered.bson.gz: MongoDB collection containing only relevant variables from previous file. Needs to unzip to restore.
 * amostra.tgz: another UFMG database (doesn't contain extended_text and other variables)
@@ -39,6 +39,8 @@ Database notebooks:
 	* from_anvil/tweets.csv:  equivalente to tweets_anvil_input.json, but was slightly transformed inside Anvil
 
 ## About Train Set
+Location: outputs/from_anvil/classifications_finished.csv
+
 Train set was built by collecting tweets from 2016-2018. The samples for data annotation were collected from a MongoDB collection (built from a JSON provided by UFMG) from weeks of virus peaks between 2016 and 2018, as there would be more relevant tweets during peaks (which would help with unbalanced data). 
 * Total sample size: 5.000.
 * Subsample size which was used for data annotation: 1.000.
