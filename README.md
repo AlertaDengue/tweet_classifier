@@ -3,7 +3,10 @@ Classification model for tweets aiming at predicting dengue, zika and chikunguny
 
 # Main files
 ## Scripts
-* classifier: 
+* classifier.ipynb: first classifier which just uses term frequency of 500 main words
+* classifier_postag.ipynb: uses part of speech tag from spaCy to generate morphological info which are used as variables
+* classifier_word2vec.ipynb: uses word2vec space.
+* classifier_word2vec_AUX.ipynb: notebook to generate word2vec models which are used by classifier_word2vec.ipynb
 * keyword_retrieval.ipynb: gets all possible variations (mispellings) for word chikungunya.
 * exploratory_analysis.ipynb: build visualizations for the data (years 2016-2018).
 * anvil_data_builder.ipynb: builds data (in JSON format) which feeds the anvil app for people to classify each tweet.
