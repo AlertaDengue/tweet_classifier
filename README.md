@@ -17,8 +17,9 @@ Database notebooks:
 
 ## Databases
 * dengue.json.bz2: main database from UFMG, with all variables. This database has a parsing error and had to be fixed.
-* dengue_fixed.json.bz2: fixed from previous database. Warning: special characters had to be removed in order for the fix to work properly.
-* mongo_ufmg_filtered (folder): MongoDB collection containing only relevant variables from previous file.
+[comment]: <> (* dengue_fixed.json.bz2: fixed from previous database. Warning: special characters had to be removed in order for the fix to work properly.)
+* mongo_ufmg_filtered (folder) 
+	* mongo_ufmg_filtered/twitter/ufmg_filtered.bson.gz: MongoDB collection containing only relevant variables from previous file. Needs to unzip to restore.
 * amostra.tgz: UFMG database (from 2010-2018, doesn't contain extended_text)
 * tweets_anvil_input.json': input for anvil app.
 
