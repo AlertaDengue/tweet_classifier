@@ -16,12 +16,27 @@ Database notebooks:
 * file_manager.ipynb: fixes dengue.json.bz2 (which had a parsing error), building the dengue_fixed.json.bz2. Then it inserts all relevant data into a MongoDB collection. Warning: special characters had to be removed in order for the fix to work properly.
 
 ## Databases
+### Iputs Out of github (files were too big)
 * dengue.json.bz2: main database from UFMG, with all variables. This database has a parsing error and had to be fixed.
 [comment]: <> (* dengue_fixed.json.bz2: fixed from previous database. Warning: special characters had to be removed in order for the fix to work properly.)
 * mongo_ufmg_filtered (folder) 
 	* mongo_ufmg_filtered/twitter/ufmg_filtered.bson.gz: MongoDB collection containing only relevant variables from previous file. Needs to unzip to restore.
-* amostra.tgz: UFMG database (from 2010-2018, doesn't contain extended_text)
-* tweets_anvil_input.json': input for anvil app.
+* amostra.tgz: another UFMG database (doesn't contain extended_text and other variables)
+* tweets_anvil_input.json: input for anvil app.
+
+### Inputs
+* Base_de_dados_dos_municipios.xls: geocodes (IBGE source) of Brazilian municipalities which are necessary to retrieve city data from Infodengue.
+
+### Outputs
+* Word2vec models: 
+	* virus_tweets.w2v: Main unaltered word2vec model
+	* virus_tweets_encoded.w2v: word2vec model where special characters from Portuguese language were removed (accents, "ç")
+	* virus_tweets_encoded_bigrams.w2v: word2vec model built using bigrams
+* tweets_filtered.json: A file even more filtered from the MongoDB (ufmg_filtered.bson) to save memory usage. This is a file which feeds the classifiers as it recovers info from tweets by their IDs.
+* tweets_anvil_input.json: input for Anvil database which was used for data annotation
+* Anvil outputs:
+	* from_anvil/classifications_finished.csv: Training data which feeds the classifiers (data were annotated inside Anvil)
+	* from_anvil/tweets.csv:  equivalente to tweets_anvil_input.json, but was slightly transformed inside Anvil
 
 ## About Train Set
 Train set was built by collecting tweets from 2016-2018. The samples for data annotation were collected from a MongoDB collection (built from a JSON provided by UFMG) from weeks of virus peaks between 2016 and 2018, as there would be more relevant tweets during peaks (which would help with unbalanced data). 
