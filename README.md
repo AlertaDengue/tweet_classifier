@@ -19,7 +19,7 @@ Classification model for tweets aiming at predicting dengue, zika and chikunguny
 * dengue-2012: Old notebook which tries to predict dengue by using UFMG database (from 2010-2018, doesn't contain extended_text) and old classification model. It should be kept as reference. What it does: simulates predictions over the year 2012, uses TF (TF-IDF doesn't work because each text sample is too long as it comprises tweets over a whole week), gets most important features (using Lasso and Random Forest), applies Machine Learning (just linear model as a baseline).
 
 ## Databases
-### Iputs Out of github (files were too big)
+### Inputs Out of github (files were too big)
 * dengue.json.bz2: main database from UFMG, with all variables. This database has a parsing error and needs to be fixed, but the filtered version stored at MongoDB surpasses that.
 <!--- * dengue_fixed.json.bz2: fixed from previous database. Warning: special characters had to be removed in order for the fix to work properly. --->
 * mongo_ufmg_filtered (folder) 
