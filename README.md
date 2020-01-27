@@ -7,7 +7,7 @@ Classification model for tweets aiming at predicting dengue, zika and chikunguny
 * classifier.ipynb: first classifier which just uses term frequency of 500 main words
 * classifier_postag.ipynb: uses part of speech tag from spaCy to generate morphological info which are used as variables
 * classifier_word2vec.ipynb: uses word2vec space.
-* classifier_word2vec_AUX.ipynb: notebook to generate word2vec models which are used by classifier_word2vec.ipynb
+	* classifier_word2vec_AUX.ipynb: notebook to generate word2vec models which are used by classifier_word2vec.ipynb
 
 ### Database notebooks:
 * file_manager.ipynb: fixes dengue.json.bz2 (which had a parsing error), building the dengue_fixed.json.bz2. Then it inserts all relevant data into a MongoDB collection. Warning: special characters had to be removed in order for the fix to work properly.
@@ -19,7 +19,7 @@ Classification model for tweets aiming at predicting dengue, zika and chikunguny
 * dengue-2012: Old notebook which tries to predict dengue by using UFMG database (from 2010-2018, doesn't contain extended_text) and old classification model. It should be kept as reference. What it does: simulates predictions over the year 2012, uses TF (TF-IDF doesn't work because each text sample is too long as it comprises tweets over a whole week), gets most important features (using Lasso and Random Forest), applies Machine Learning (just linear model as a baseline).
 
 ## Databases
-### Inputs Out of github (files were too big)
+### Inputs out of github (files were too big)
 * dengue.json.bz2: main database from UFMG, with all variables. This database has a parsing error and needs to be fixed, but the filtered version stored at MongoDB surpasses that.
 <!--- * dengue_fixed.json.bz2: fixed from previous database. Warning: special characters had to be removed in order for the fix to work properly. --->
 * mongo_ufmg_filtered (folder) 
@@ -35,10 +35,10 @@ Classification model for tweets aiming at predicting dengue, zika and chikunguny
 	* virus_tweets.w2v: Main unaltered word2vec model
 	* virus_tweets_encoded.w2v: word2vec model where special characters from Portuguese language were removed (accents, "ç")
 	* virus_tweets_encoded_bigrams.w2v: word2vec model built using bigrams
-* tweets_filtered.json: A file even more filtered from the MongoDB (ufmg_filtered.bson) to save memory usage. This is a file which feeds the classifiers as it recovers info from tweets by their IDs.
+* **tweets_filtered.json**: A file even more filtered from the MongoDB (ufmg_filtered.bson) to save memory usage. This is a file which feeds the classifiers as it recovers info from tweets by their IDs.
 * tweets_anvil_input.json: input for Anvil database which was used for data annotation
 * Anvil outputs:
-	* from_anvil/classifications_finished.csv: Training data which feeds the classifiers (data were annotated inside Anvil)
+	* **from_anvil/classifications_finished.csv**: Training data which feeds the classifiers (data were annotated inside Anvil)
 	* from_anvil/tweets.csv:  equivalente to tweets_anvil_input.json, but was slightly transformed inside Anvil
 
 # About Train Set
